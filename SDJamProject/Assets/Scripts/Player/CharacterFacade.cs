@@ -6,7 +6,7 @@
 
 
 using UnityEngine;
-using SDJam.Common;
+using SDJam.Lights;
 
 
 namespace SDJam.Player {
@@ -15,7 +15,7 @@ namespace SDJam.Player {
         [SerializeField]
         private CharacterMovement characterMovement;
         [SerializeField]
-        private LightSwitchController flashlightController;
+        private FlashlightController flashlightController;
         #endregion
 
         #region MonoBehaviour methods
@@ -41,7 +41,7 @@ namespace SDJam.Player {
             }
 
             if( Input.GetKeyUp( KeyCode.F ) ) {
-                flashlightController.SwitchLightOnOff();
+                flashlightController.ToggleLight();
             }
         }
         #endregion

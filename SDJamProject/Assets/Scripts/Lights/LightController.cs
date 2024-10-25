@@ -8,22 +8,18 @@
 using UnityEngine;
 
 
-namespace SDJam.Common {
-    public class LightSwitchController : MonoBehaviour {
+namespace SDJam.Lights {
+    [System.Serializable]
+    public class LightController {
         #region Variables
         [SerializeField]
         private GameObject lightGameObject;
         [SerializeField]
         private bool hasToStartOn;
-        #endregion
-
-
-        #region MonoBehaviour methods
-        private void Awake() {
-            TurnLight( hasToStartOn );
+        public bool HasToStartOn {
+            get { return hasToStartOn; }
         }
         #endregion
-
 
         #region Public methods
         public void SwitchLightOnOff() {
