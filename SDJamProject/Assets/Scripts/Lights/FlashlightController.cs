@@ -23,6 +23,13 @@ namespace SDJam.Lights {
         [Header( "Other variables" )]
         [SerializeField]
         private LightController lightController;
+
+        [SerializeField]
+        private bool isUsable = true;
+        public bool IsUsable {
+            get { return isUsable; }
+            set { isUsable = value; }
+        }
         #endregion
 
         #region MonoBehaviour methods
@@ -34,19 +41,27 @@ namespace SDJam.Lights {
             batteryTimer.StartTimer();
             batteryTimer.SetPause( !lightController.HasToStartOn );
             batteryTimer.OnRemaningTimeUpdated.AddListener( UpdateView );
+            batteryTimer.OnTimeRanOut.AddListener( SetFlashlightUnusable );
         }
         #endregion
 
         #region Public methods
         public void ToggleLight() {
-            lightController.SwitchLightOnOff();
-            batteryTimer.TogglePause();
+            if( IsUsable ) {
+                lightController.SwitchLightOnOff();
+                batteryTimer.TogglePause();
+            }
         }
         #endregion
 
         #region Private methods
         private void UpdateView() {
             batteryBar.fillAmount = batteryTimer.RemainingTime / batteryTimer.TimeLimit;
+        }
+
+        private void SetFlashlightUnusable() {
+            IsUsable = false;
+            lightController.TurnLight( IsUsable );
         }
         #endregion
     }
