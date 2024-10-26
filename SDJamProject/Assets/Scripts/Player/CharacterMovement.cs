@@ -20,7 +20,7 @@ namespace SDJam.Player {
 
         #region Public methods
         public void Move( Vector3 _direction ) {
-            characterController.Move( _direction * speed );
+            characterController.SimpleMove( _direction * speed );
         }
 
 
