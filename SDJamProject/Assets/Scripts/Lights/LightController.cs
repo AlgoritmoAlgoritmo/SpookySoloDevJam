@@ -1,6 +1,6 @@
 ﻿/*
-* Author: irisGameDev
-* GitHub: https://github.com/irisGameDev
+* Author: Iris Bermudez
+* GitHub: https://github.com/AlgoritmoAlgoritmo
 * Date: 25/10/2024 (DD/MM/YY)
 */
 
@@ -28,6 +28,10 @@ namespace SDJam.Lights {
 
         public void TurnLight( bool _turnOn ) {
             lightGameObject.SetActive( _turnOn );
+        }
+
+        public bool IsOn() {
+            return lightGameObject.activeInHierarchy;
         }
         #endregion
     }

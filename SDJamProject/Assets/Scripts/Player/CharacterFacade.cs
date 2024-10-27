@@ -1,6 +1,6 @@
 ﻿/*
-* Author: irisGameDev
-* GitHub: https://github.com/irisGameDev
+* Author: Iris Bermudez
+* GitHub: https://github.com/AlgoritmoAlgoritmo
 * Date: 25/10/2024 (DD/MM/YY)
 */
 
