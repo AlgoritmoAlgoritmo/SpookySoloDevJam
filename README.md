@@ -7,8 +7,9 @@ Solo Dev Game Jam #5 - Spooky jam
 (https://itch.io/jam/solo-dev-game-jam-5-spooky-jam).
 
 The reason why I'm quitting at around 50% of 
-completition is that I just can't ressonate with the
-theme (Fight The Dark) nor the horror genre.
+completition is that it just doesn't resonate with me.
+Not only because of the theme (Fight The Dark) but also
+because of the genre (horror).
 
 
 The Concept:
@@ -17,6 +18,7 @@ A game in which the player has to survive until morning
 by keeping the lights of the house on as much as 
 possible, to avoid enemies to spawn in the darkness,
 while said lights fail and turn off constantly.
+
 The player's flashlight can damage enemies, but there
 aren't any other batteries left, so they have to use
 it wisely.
