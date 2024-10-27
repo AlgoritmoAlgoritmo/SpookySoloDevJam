@@ -32,5 +32,4 @@ What I achieved:
 
 
 External resources:
-- The house model is from cgtrader.com/free-3d-models/
-  exterior/house/house-15-5c3906c8-05af-49f3-98d4-9c94eb3c2bc8
+- The house model is from cgtrader.com/free-3d-models/exterior/house/house-15-5c3906c8-05af-49f3-98d4-9c94eb3c2bc8
