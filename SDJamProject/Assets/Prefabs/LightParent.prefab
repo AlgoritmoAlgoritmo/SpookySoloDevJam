@@ -248,7 +248,7 @@ MonoBehaviour:
   lightController:
     lightGameObject: {fileID: 1757459016635092821}
     hasToStartOn: 1
-  lightOnTimeRange: {x: 1, y: 5}
+  lightOnTimeRange: {x: 10, y: 20}
   OnTurnOn:
     m_PersistentCalls:
       m_Calls: []
