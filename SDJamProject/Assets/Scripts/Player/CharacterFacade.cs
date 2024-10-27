@@ -7,6 +7,7 @@
 
 using UnityEngine;
 using SDJam.Lights;
+using SDJam.Interactions;
 
 
 namespace SDJam.Player {
@@ -16,11 +17,14 @@ namespace SDJam.Player {
         private CharacterMovement characterMovement;
         [SerializeField]
         private FlashlightController flashlightController;
+        [SerializeField]
+        private InteractionController interactionsController;
         #endregion
 
         #region MonoBehaviour methods
         private void FixedUpdate() {
             ManageInput();
+            interactionsController.ManageInteractions();
         }
         #endregion
 

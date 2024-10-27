@@ -71,7 +71,6 @@ namespace SDJam.Utils {
                 remainingTime = timeLimit;
 
                 while( remainingTime > 0 && isRunning ) {
-                    Debug.Log( remainingTime );
                     if( !isPaused ) {
                         remainingTime -= updateRateInSeconds;
                         OnRemaningTimeUpdated?.Invoke();

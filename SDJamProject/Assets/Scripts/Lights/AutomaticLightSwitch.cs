@@ -19,6 +19,8 @@ namespace SDJam.Lights {
 
         public UnityEvent OnTurnOn = new UnityEvent();
         public UnityEvent OnTurnOff = new UnityEvent();
+
+        private bool isWaitingToAutomaticallyTurnOff;
         #endregion
 
 
@@ -31,19 +33,41 @@ namespace SDJam.Lights {
 
 
         #region Public methods
+        public void ToggleOnOff() {
+            Debug.Log( "ToggleOnOff" );
+
+            if( lightController.IsOn() ) {
+                Debug.Log( "IsOn" );
+                TurnOff();
+
+            } else {
+                Debug.Log( "IsOff" );
+                TurnOn();
+            }
+        }
+
         public void TurnOn() {
-            if( !lightController.IsOn() ) {
-                lightController.TurnLight( true );
-                Invoke( "TurnOff", Random.Range(lightOnTimeRange.x, lightOnTimeRange.y) );
-                OnTurnOn.Invoke();
+            lightController.TurnLight( true );
+            OnTurnOn.Invoke();
+
+            if( !isWaitingToAutomaticallyTurnOff ) {
+                isWaitingToAutomaticallyTurnOff = true;
+                Invoke( "AutomaticTurnOff", Random.Range(lightOnTimeRange.x, lightOnTimeRange.y) );
             }
         }
 
         public void TurnOff() {
-            if( lightController.IsOn() ) {
-                lightController.TurnLight( false );
-                OnTurnOff.Invoke();
-            }
+            lightController.TurnLight( false );
+            OnTurnOff.Invoke();
+        }
+        #endregion
+
+
+        #region Private methods
+        private void AutomaticTurnOff() {
+            Debug.Log( "AutomaticTurnOff" );
+            TurnOff();
+            isWaitingToAutomaticallyTurnOff = false;
         }
         #endregion
     }
